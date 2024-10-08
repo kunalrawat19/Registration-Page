@@ -1,5 +1,5 @@
 const Signup = require('../models/signup');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const signInHandler = async(req,res)=>{
     try{
         const{email, password}=req.body;
@@ -16,7 +16,8 @@ const signInHandler = async(req,res)=>{
 
     }
     catch (err) {
-    res.status(500).json({ message: 'Server error', error: err.message });
+        console.log(error.message)
+        res.status(500).json({ message: 'Server error', error: err.message });
   }
 }
 module.exports = signInHandler;

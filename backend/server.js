@@ -8,7 +8,7 @@ require('dotenv').config();
 
 app.use(express.json());
 connection();
-const PORT = process.env.PORT || 4000 ;
+const PORT = process.env.PORT || 5173 ;
 
 
 
