@@ -12,7 +12,7 @@ const signInHandler = async(req,res)=>{
         if (!isMatch) {
             return res.status(400).json({ message: 'Invalid password' });
         }
-        res.send.status(200).json({ message: 'Signin successful', data: user });
+        res.status(200).json({ message: 'Signin successful', data: user });
 
     }
     catch (err) {
