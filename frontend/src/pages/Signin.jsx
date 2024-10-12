@@ -31,6 +31,7 @@ const Signin = () => {
       navigate('/dashboard', { state: { firstName: response.data.data.firstName, lastName: response.data.data.lastName, role: response.data.data.role } });// Navigate to the dashboard on success
       
     } catch (error) {
+      alert(error.response?.data?.message || error.message);
       console.error('Error during sign in:', error.response?.data?.message || error.message);
     }
   };

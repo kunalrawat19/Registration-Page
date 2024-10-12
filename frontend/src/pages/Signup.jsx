@@ -13,7 +13,7 @@ const Signup = () => {
   });
   const navigate = useNavigate();
   const handleRoleToggle = () => {
-    setRole(role === 'User' ? 'admin' : 'user');
+    setRole(role === 'user' ? 'admin' : 'user');
   };
 
   const handleChange = (e) => {
@@ -38,6 +38,7 @@ const Signup = () => {
       navigate('/dashboard', { state: { firstName: response.data.user.firstName, lastName: response.data.user.lastName, role: response.data.user.role } });// Navigate to the dashboard on success
       
     } catch (error) {
+      // alert(error.errors || error.message);
       console.error('Error during sign in:', error.response?.data?.message || error.message);
     }
     console.log(formData, role);
@@ -57,7 +58,7 @@ const Signup = () => {
               className="bg-indigo-700 text-white py-2 px-6 rounded-md hover:bg-indigo-900 transition"
               onClick={handleRoleToggle}
             >
-              {role === 'User' ? 'Switch to Admin' : 'Switch to User'}
+              {role === 'user' ? 'Switch to Admin' : 'Switch to User'}
             </button>
           </div>
           <h2 className="text-2xl font-bold text-center mb-8">Signup as {role}</h2>
